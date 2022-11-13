@@ -1,0 +1,71 @@
+.container-grid{
+    border:2px solid $color-white;
+    height: calc(100% - 10rem);
+    background-color: $color-secondary-light;
+    border-radius: .25em;
+    
+    &__title{
+    border-radius: inherit;
+    color:$color-white;
+    letter-spacing: .25rem;
+    background-color: $color-primary-dark;
+    padding: 2.3rem;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    font-size: $font-small;
+    }
+
+    &__items{
+        display:grid;
+        border:5px solid $color-primary-light;
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+        grid-auto-rows: $cell-height;
+        gap: 2rem;
+        // justify-content: space-evenly;
+        padding:2rem;
+        // align-items: end;
+        background-color: $color-secondary-dark;
+        overflow: hidden;
+        
+    }
+    &__item{
+        cursor: pointer;
+        position: relative;
+        background-color: $color-primary-dark;
+        // height: 5rem;
+        // width:5rem;
+        border-radius: .25em;
+        align-self: stretch;
+        transition: all .32s;
+        z-index: 100;
+        text-align: center;
+        line-height: $cell-height; //center text vertically by value same as height of div 
+    }
+
+    &__item::before{
+        content: "";
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 100%;
+        width:100%;
+        border-radius: .25rem;
+        background-color: #555;
+        // z-index: -1;
+        backface-visibility: hidden;
+        transition: all .72s;
+        opacity: 1;
+    }
+
+    &__item:hover{
+        color: $color-white;
+        transform: scaleX(1.2) scaleY(.85);
+        z-index: 200;
+    }
+    
+    &__item:hover::before {
+        background-color: transparent;
+        transform: scaleX(1.12) scaleY(1.15);
+    }
+}
+

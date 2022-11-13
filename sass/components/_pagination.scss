@@ -1,0 +1,52 @@
+.pagination{
+
+    &__list{
+        display: grid;
+        color:white;
+        // grid-template-rows: minmax(1rem,3.5rem);
+        grid-template-columns: repeat(5,minmax(5rem,9rem));
+        justify-content: center;
+        text-decoration: none;
+        list-style: none;
+        gap: 1rem;
+        
+    
+    &> *{
+        // z-index: -1;
+        position: relative;
+        background-color: $color-secondary-light;
+        text-align: center;
+        padding: 1.6rem;
+        border-radius: .78em;
+        font-weight: $font-weight-bold;
+    }
+    &>*:first-child{
+        background-color: darken($color-secondary-light,15%);
+    }
+    &>*:last-child{
+        background-color: darken($color-secondary-light,15%) ;
+    }
+    &>*:hover{
+        cursor: pointer;
+        // z-index: 10;
+        background-color: $color-secondary-dark;
+    }
+
+    &>*::after{
+        position: absolute;
+        content: "";
+        // background-color: $color-white-2;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        border-radius: inherit;
+        // transition: all .5s;
+    }
+    &>*:hover:not(:last-child):not(:first-child)::after{
+        animation: slider .5s linear forwards ;
+        
+    }
+}
+}

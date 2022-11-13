@@ -1,0 +1,5 @@
+*,*::before,*::after{box-sizing: border-box;}
+
+html{
+    font-size:calc(((100/16px)*10px)*1%);
+}

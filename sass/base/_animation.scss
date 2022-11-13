@@ -1,0 +1,12 @@
+@keyframes slider {
+from{
+    transform: translateX(0);
+    opacity: .45;
+    background-image: linear-gradient(to right,$color-secondary-light,transparent);
+}
+to{
+    transform: translateX(10rem);
+    opacity: 0;
+    background-image: linear-gradient(to right,transparent,$color-secondary-light);
+}
+}
